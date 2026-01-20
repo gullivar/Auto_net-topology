@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAGuard OT Topology PoC</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Cytoscape & Extensions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"></script>
+    <script src="https://unpkg.com/layout-base/layout-base.js"></script>
+    <script src="https://unpkg.com/cose-base/cose-base.js"></script>
+    <script src="https://unpkg.com/cytoscape-fcose/cytoscape-fcose.js"></script>
+    <script src="https://unpkg.com/cytoscape-grid-guide/cytoscape-grid-guide.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- LEFT: Logs Panel -->
+        <div class="log-panel" id="logPanel">
+            <div class="log-header">
+                <span>Real-time Traffic & Scans</span>
+                <span id="log-status" style="font-size: 10px; color: #aaa;">Ready</span>
+            </div>
+            <div class="log-content" id="logTerminal">
+                <!-- Logs will appear here -->
+                <div class="log-entry system">System initialized. Waiting for simulation...</div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Topology View -->
+        <div class="topology-view">
+            <div class="header">
+                <h1>SAGuard Network Map</h1>
+                <div style="font-size: 14px; color: #666; margin-top: 4px;">
+                    Assets: <span id="asset-count">0</span> | Zones: <span id="zone-count">0</span>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="btn btn-primary" onclick="startSimulation()">Start Sim</button>
+                <button class="btn btn-danger" onclick="stopSimulation()">Stop</button>
+                <div style="width: 1px; height: 20px; background: #ddd; margin: 0 8px;"></div>
+                <button class="btn" onclick="fitToScreen()">Fit Screen</button>
+                <button class="btn" onclick="resetLayout()">Reset</button>
+            </div>
+
+            <!-- Legend Removed -->
+
+            <!-- Cytoscape Container -->
+            <div id="cy"></div>
+
+            <!-- Detail Floater -->
+            <div class="details-float" id="detailsFloater">
+                <h2 id="detail-title">Asset Details</h2>
+                <div id="detail-content">Select a node...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
