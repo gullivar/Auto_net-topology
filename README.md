@@ -4,6 +4,8 @@
 
 이 프로젝트는 **Malcolm (Custom Zeek)**을 이용하여 OT(Operational Technology) 망의 네트워크 트래픽을 수집하고, **Cytoscape.js**를 활용하여 실시간으로 네트워크 토폴로지를 자동 생성 및 업데이트하는 **PoC(Proof of Concept) 목업 시스템**입니다.
 
+![SAGuard Network Topology Screenshot](images/screenshot.png)
+
 ### 🎯 목적
 
 가상의 Zeek 네트워크 트래픽을 시뮬레이션하여 실시간으로 네트워크 토폴로지가 Cytoscape로 그려지는 것을 검증합니다. 이 목업 시스템은 Malcolm이 트래픽을 수집했다고 가정하고 개발되었습니다.
